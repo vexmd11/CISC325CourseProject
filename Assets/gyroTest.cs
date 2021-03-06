@@ -9,7 +9,8 @@ public class gyroTest : MonoBehaviour
 
     public bool gyroAcceleration;
     public bool rotate;
-
+    public Vector3 gyroOffset; 
+    Vector3 rotation;
     void Start()
     {
         //Set up and enable the gyroscope (check your device has one)
@@ -37,7 +38,13 @@ public class gyroTest : MonoBehaviour
         }
         
         if (rotate) {
-            transform.rotation = m_Gyro.attitude;
+            //transform.eulerAngles = m_Gyro.attitude.eulerAngles + gyroOffset;
+
+            rotation.x = m_Gyro.attitude.eulerAngles.x;
+            rotation.z = m_Gyro.attitude.eulerAngles.y;
+            //rotation.y = -m_Gyro.attitude.eulerAngles.z;
+            transform.eulerAngles = rotation + gyroOffset;
+            Debug.Log(m_Gyro.attitude.eulerAngles.x + ",  " + m_Gyro.attitude.eulerAngles.y + ",  " + m_Gyro.attitude.eulerAngles.z);
         }
 
         if (dir.sqrMagnitude > 1)
