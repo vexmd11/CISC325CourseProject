@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class gyroTest : MonoBehaviour
+public class GyroCannon : MonoBehaviour
 {
     Gyroscope m_Gyro;
     public float speed = 10.0f;
@@ -41,9 +41,9 @@ public class gyroTest : MonoBehaviour
         if (rotate) {
             //transform.eulerAngles = m_Gyro.attitude.eulerAngles + gyroOffset;
 
-            rotation.x = m_Gyro.attitude.eulerAngles.x;
+            rotation.x = -m_Gyro.attitude.eulerAngles.x;
             rotation.z = m_Gyro.attitude.eulerAngles.y;
-            //rotation.y = -m_Gyro.attitude.eulerAngles.z;
+            rotation.y = -m_Gyro.attitude.eulerAngles.z;
             transform.eulerAngles = rotation + gyroOffset;
             Debug.Log(m_Gyro.attitude.eulerAngles.x + ",  " + m_Gyro.attitude.eulerAngles.y + ",  " + m_Gyro.attitude.eulerAngles.z);
         }

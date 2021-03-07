@@ -10,8 +10,10 @@ namespace Mirror.Discovery
     public class NetworkDiscoveryHUD : MonoBehaviour
     {
         readonly Dictionary<long, ServerResponse> discoveredServers = new Dictionary<long, ServerResponse>();
-        Vector2 scrollViewPos = Vector2.zero;
 
+        public Vector2 scrollViewPos;
+        public Canvas canny;
+        
         public NetworkDiscovery networkDiscovery;
 
 #if UNITY_EDITOR
@@ -38,8 +40,11 @@ namespace Mirror.Discovery
                 DrawGUI();
         }
 
+    
         void DrawGUI()
         {
+            /*
+
             GUILayout.BeginHorizontal();
 
             if (GUILayout.Button("Find Servers"))
@@ -70,16 +75,21 @@ namespace Mirror.Discovery
             // show list of found server
 
             GUILayout.Label($"Discovered Servers [{discoveredServers.Count}]:");
-
+            
             // servers
             scrollViewPos = GUILayout.BeginScrollView(scrollViewPos);
+            */
+            foreach (ServerResponse info in discoveredServers.Values) {
 
-            foreach (ServerResponse info in discoveredServers.Values)
-                if (GUILayout.Button(info.EndPoint.Address.ToString()))
-                    Connect(info);
+                Connect(info);
+                canny.enabled = false;
+            }
+                //if (GUILayout.Button(info.EndPoint.Address.ToString()))
+                
 
-            GUILayout.EndScrollView();
+            //GUILayout.EndScrollView();
         }
+        
 
         void Connect(ServerResponse info)
         {
@@ -90,6 +100,28 @@ namespace Mirror.Discovery
         {
             // Note that you can check the versioning to decide if you can connect to the server or not using this method
             discoveredServers[info.serverId] = info;
+        }
+
+        public void lookForServers() {
+
+            discoveredServers.Clear();
+            networkDiscovery.StartDiscovery();
+        }
+
+        public void startHost() {
+
+            discoveredServers.Clear();
+            NetworkManager.singleton.StartHost();
+            networkDiscovery.AdvertiseServer();
+
+        }
+
+        public void startServer() {
+
+            discoveredServers.Clear();
+            NetworkManager.singleton.StartServer();
+
+            networkDiscovery.AdvertiseServer();
         }
     }
 }
