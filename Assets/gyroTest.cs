@@ -17,6 +17,9 @@ public class gyroTest : MonoBehaviour
         //Set up and enable the gyroscope (check your device has one)
         m_Gyro = Input.gyro;
         m_Gyro.enabled = true;
+
+        rotation.x = m_Gyro.attitude.eulerAngles.x;
+        rotation.z = m_Gyro.attitude.eulerAngles.y;
     }
 
     // Update is called once per frame
@@ -41,11 +44,18 @@ public class gyroTest : MonoBehaviour
         if (rotate) {
             //transform.eulerAngles = m_Gyro.attitude.eulerAngles + gyroOffset;
 
-            rotation.x = m_Gyro.attitude.eulerAngles.x;
-            rotation.z = m_Gyro.attitude.eulerAngles.y;
+            rotation.x -= m_Gyro.rotationRateUnbiased.x * Mathf.Rad2Deg * Time.deltaTime;
+            rotation.z -= m_Gyro.rotationRateUnbiased.y * Mathf.Rad2Deg * Time.deltaTime;
             //rotation.y = -m_Gyro.attitude.eulerAngles.z;
+            rotation.y = 0;
+
+            
             transform.eulerAngles = rotation + gyroOffset;
+            //transform.rotation = Quaternion.Euler(rotation);
+
+
             Debug.Log(m_Gyro.attitude.eulerAngles.x + ",  " + m_Gyro.attitude.eulerAngles.y + ",  " + m_Gyro.attitude.eulerAngles.z);
+            Debug.Log(Input.gyro.userAcceleration.x+ ",  " + Input.gyro.userAcceleration.y+ ",  " + Input.gyro.userAcceleration.z );
         }
 
         if (dir.sqrMagnitude > 1)

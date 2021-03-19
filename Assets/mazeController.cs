@@ -15,6 +15,8 @@ public class mazeController : NetworkBehaviour
     Vector3 rotation;
 
     bool instantiated = true;
+
+    public bool experimentalRotation;
     void Start()
     {
         
@@ -37,6 +39,10 @@ public class mazeController : NetworkBehaviour
                 m_Gyro = Input.gyro;
                 m_Gyro.enabled = true;
                 instantiated = false;
+                if (experimentalRotation){
+                    rotation.x = m_Gyro.attitude.eulerAngles.x;
+                    rotation.z = m_Gyro.attitude.eulerAngles.y;
+                }
             }
         }
 
@@ -60,8 +66,14 @@ public class mazeController : NetworkBehaviour
         if (rotate) {
             //transform.eulerAngles = m_Gyro.attitude.eulerAngles + gyroOffset;
 
-            rotation.x = m_Gyro.attitude.eulerAngles.x;
-            rotation.z = m_Gyro.attitude.eulerAngles.y;
+            if (experimentalRotation) {
+                rotation.x -= m_Gyro.rotationRateUnbiased.x * Mathf.Rad2Deg * Time.deltaTime;
+                rotation.z -= m_Gyro.rotationRateUnbiased.y * Mathf.Rad2Deg * Time.deltaTime;
+            } else {
+                rotation.x = m_Gyro.attitude.eulerAngles.x;
+                rotation.z = m_Gyro.attitude.eulerAngles.y;
+            }
+            
             //rotation.y = -m_Gyro.attitude.eulerAngles.z;
             transform.eulerAngles = rotation + gyroOffset;
             Debug.Log(m_Gyro.attitude.eulerAngles.x + ",  " + m_Gyro.attitude.eulerAngles.y + ",  " + m_Gyro.attitude.eulerAngles.z);

@@ -122,6 +122,7 @@ namespace Mirror.Discovery
             NetworkManager.singleton.StartServer();
 
             networkDiscovery.AdvertiseServer();
+            canny.enabled = false;
         }
     }
 }
