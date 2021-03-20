@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Tip
+  - death
+  - redGoal
+  - greenGoal
+  - spawner
   layers:
   - Default
   - TransparentFX
