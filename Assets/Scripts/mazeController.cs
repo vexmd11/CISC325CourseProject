@@ -89,4 +89,11 @@ public class mazeController : NetworkBehaviour
         if (move)
             transform.Translate(dir*speed);
     }
+
+    public void setRotation() {
+        rotation.x = m_Gyro.attitude.eulerAngles.x;
+        rotation.z = m_Gyro.attitude.eulerAngles.y;
+
+    }
+    
 }

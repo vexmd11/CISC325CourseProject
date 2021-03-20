@@ -12,12 +12,13 @@ public class gyroTest : MonoBehaviour
     public bool rotate;
     public Vector3 gyroOffset; 
     Vector3 rotation;
+
     void Start()
     {
         //Set up and enable the gyroscope (check your device has one)
         m_Gyro = Input.gyro;
         m_Gyro.enabled = true;
-
+        Screen.orientation = ScreenOrientation.Portrait;
         rotation.x = m_Gyro.attitude.eulerAngles.x;
         rotation.z = m_Gyro.attitude.eulerAngles.y;
     }
@@ -46,16 +47,20 @@ public class gyroTest : MonoBehaviour
 
             rotation.x -= m_Gyro.rotationRateUnbiased.x * Mathf.Rad2Deg * Time.deltaTime;
             rotation.z -= m_Gyro.rotationRateUnbiased.y * Mathf.Rad2Deg * Time.deltaTime;
-            //rotation.y = -m_Gyro.attitude.eulerAngles.z;
+            
             rotation.y = 0;
 
+            if (Input.anyKeyDown){
+                resetRotation();
+            }
             
-            transform.eulerAngles = rotation + gyroOffset;
-            //transform.rotation = Quaternion.Euler(rotation);
+            //transform.eulerAngles = rotation + gyroOffset;
+            transform.rotation = Quaternion.Euler(rotation);
 
 
-            Debug.Log(m_Gyro.attitude.eulerAngles.x + ",  " + m_Gyro.attitude.eulerAngles.y + ",  " + m_Gyro.attitude.eulerAngles.z);
-            Debug.Log(Input.gyro.userAcceleration.x+ ",  " + Input.gyro.userAcceleration.y+ ",  " + Input.gyro.userAcceleration.z );
+            //Debug.Log(m_Gyro.attitude.eulerAngles.x + ",  " + m_Gyro.attitude.eulerAngles.y + ",  " + m_Gyro.attitude.eulerAngles.z);
+            Debug.Log(transform.eulerAngles);
+            //Debug.Log(Input.gyro.userAcceleration.x+ ",  " + Input.gyro.userAcceleration.y+ ",  " + Input.gyro.userAcceleration.z );
         }
 
         if (dir.sqrMagnitude > 1)
@@ -69,4 +74,24 @@ public class gyroTest : MonoBehaviour
             transform.Translate(dir*speed);
 
     }
+
+    public void resetRotation() {
+        rotation.x = 0;//m_Gyro.attitude.eulerAngles.x;
+        rotation.z = 0;//m_Gyro.attitude.eulerAngles.y;
+
+    }
 }
+
+    
+
+    //Vector2 values;
+    //values.x = m_Gyro.attitude.x;
+    //values.y = m_Gyro.attitude.y;
+
+    //rotation.x = m_Gyro.attitude.eulerAngles.x % 360f;
+    //rotation.z = m_Gyro.attitude.eulerAngles.y % 360f;            
+    //rotation.x = values.x;
+    //rotation.z = values.y;
+    //rotation.x += Input.gyro.userAcceleration.x;
+    //rotation.z += Input.gyro.userAcceleration.y;
+    //rotation.y = m_Gyro.attitude.eulerAngles.z % 360f;
