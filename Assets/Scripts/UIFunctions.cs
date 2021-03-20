@@ -37,11 +37,13 @@ public class UIFunctions : MonoBehaviour
         {
             Debug.Log("handheld");
             mobileMainMenuPanel.SetActive(true);
+            mainMenuPanel.SetActive(false);
         }
         else
         {
             Debug.Log("PC");
             mainMenuPanel.SetActive(true);
+            mobileMainMenuPanel.SetActive(false);
         }
     }
     
