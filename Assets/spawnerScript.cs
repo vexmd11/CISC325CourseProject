@@ -1,12 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class spawnerScript : MonoBehaviour
 {
     // Start is called before the first frame update
     public bool start;
     public GameObject rball, gball;
+
+    [Tooltip("canvas textbox that will display this score")]
+    public Text scoreDisplay;
+
+    [Tooltip("Player this spawner/score counter associated with. 1-4")]
+    public int playerNumber;
     bool spawn = true;
 
     public int score;
@@ -25,7 +32,9 @@ public class spawnerScript : MonoBehaviour
             if (spawn) //prevents a shit ton of balls from spawning
                 StartCoroutine(spawnBalls());    
         }
-        Debug.Log("SCORE IS:" + score);
+        //Debug.Log("SCORE IS:" + score);
+        scoreDisplay.text = "SCORE: " + score;
+
     }
 
     IEnumerator spawnBalls(){
@@ -38,6 +47,8 @@ public class spawnerScript : MonoBehaviour
         } else {
             ball = gball;
         }
+
+        ball.GetComponent<colourBallScript>().playerNumber = playerNumber;
 
         //spawn ball
         Instantiate(ball, transform.position, Quaternion.identity);

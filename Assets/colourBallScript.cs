@@ -7,9 +7,13 @@ public class colourBallScript : MonoBehaviour
     // Start is called before the first frame update
     public bool red;
     GameObject manager;
+    public int playerNumber;
     void Start()
     {
-        manager = GameObject.FindGameObjectWithTag("spawner");
+        if (playerNumber == 1)
+            manager = GameObject.FindGameObjectWithTag("spawner");
+        else
+            manager = GameObject.FindGameObjectWithTag("spawner2");
     }
 
     // Update is called once per frame

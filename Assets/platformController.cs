@@ -21,6 +21,7 @@ public class platformController : MonoBehaviour
         Screen.orientation = ScreenOrientation.Portrait;
         rotation.x = 0;//m_Gyro.attitude.eulerAngles.x;
         rotation.z = 0;//m_Gyro.attitude.eulerAngles.y;
+        //GameObject.Find("gameManager").GetComponent<controlGameView>().numberOfPlayers++;
     }
 
     // Update is called once per frame
