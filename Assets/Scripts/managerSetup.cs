@@ -11,7 +11,6 @@ public class managerSetup : MonoBehaviour
         manager = this.GetComponent<NetworkManager>();
         manager.networkAddress = NetworkManager.singleton.networkAddress;
         Debug.Log(NetworkManager.singleton.networkAddress);
-
     }
 
     // Update is called once per frame

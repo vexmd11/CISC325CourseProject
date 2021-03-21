@@ -82,7 +82,7 @@ namespace Mirror.Discovery
             foreach (ServerResponse info in discoveredServers.Values) {
 
                 Connect(info);
-                canny.enabled = false;
+                //canny.enabled = false;
             }
                 //if (GUILayout.Button(info.EndPoint.Address.ToString()))
                 
@@ -122,7 +122,7 @@ namespace Mirror.Discovery
             NetworkManager.singleton.StartServer();
 
             networkDiscovery.AdvertiseServer();
-            canny.enabled = false;
+            //canny.enabled = false;
         }
     }
 }
