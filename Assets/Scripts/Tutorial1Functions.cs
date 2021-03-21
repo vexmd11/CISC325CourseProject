@@ -14,6 +14,8 @@ public class Tutorial1Functions : MonoBehaviour
     public GameObject[] tutorialPanelsLevel1;
     int index1 = 0;
 
+    public GameObject preGamePanel;
+
     public void ScrollTutorial1()
     {
         if (index1 < tutorialPanelsLevel1.Length - 1)
@@ -28,6 +30,7 @@ public class Tutorial1Functions : MonoBehaviour
             tutorialPanelsLevel1[index1].SetActive(false);
             index1 = 0;
             buttonSource.PlayOneShot(menuSelect);
+            Time.timeScale = 0f;
         }
     }
 
@@ -40,5 +43,12 @@ public class Tutorial1Functions : MonoBehaviour
             tutorialPanelsLevel1[index1].SetActive(true);
             buttonSource.PlayOneShot(menuBack);
         }
+    }
+
+    public void StartGame()
+    {
+        buttonSource.PlayOneShot(menuSelect);
+        Time.timeScale = 1f;
+        preGamePanel.SetActive(false);
     }
 }
