@@ -1303,7 +1303,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &439557557
 Transform:
   m_ObjectHideFlags: 0
@@ -1330,7 +1330,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d13cd8e8ce3b7346990c69223dfa57d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startNetworkButton: {fileID: 1324475092}
 --- !u!1 &442925119
 GameObject:
   m_ObjectHideFlags: 0
@@ -2407,7 +2406,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &644405700
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4637,6 +4636,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connectedPanel: {fileID: 570337388}
   tutorialPanel1: {fileID: 1837325783}
+  startGameButton: {fileID: 1324475092}
   joinGameButton: {fileID: 644405701}
 --- !u!1 &1247235612
 GameObject:
@@ -4783,7 +4783,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1324475091
 RectTransform:
   m_ObjectHideFlags: 0

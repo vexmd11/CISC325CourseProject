@@ -8,6 +8,7 @@ public class DeterminePlatform : MonoBehaviour
 
     public GameObject connectedPanel;
     public GameObject tutorialPanel1;
+    public Button startGameButton;
     public Button joinGameButton;
 
     // Start is called before the first frame update
@@ -25,6 +26,7 @@ public class DeterminePlatform : MonoBehaviour
             Debug.Log("PC");
             tutorialPanel1.SetActive(true);
             connectedPanel.SetActive(false);
+            startGameButton.onClick.Invoke();
         }
     }
 }

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class MazeGameController : MonoBehaviour
 {
 
+    /*
     public Button startNetworkButton;
 
     // Start is called before the first frame update
@@ -13,4 +14,5 @@ public class MazeGameController : MonoBehaviour
     {
         startNetworkButton.onClick.Invoke();
     }
+    */
 }
