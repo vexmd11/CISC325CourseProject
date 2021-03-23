@@ -238,6 +238,7 @@ GameObject:
   - component: {fileID: 365066949446444061}
   - component: {fileID: 365066949446444059}
   - component: {fileID: -3948460616249899516}
+  - component: {fileID: -5904830186133605563}
   m_Layer: 0
   m_Name: PlayerMaze
   m_TagString: Untagged
@@ -445,3 +446,15 @@ MonoBehaviour:
     localRotation: {x: 0, y: 0, z: 0, w: 0}
     localScale: {x: 0, y: 0, z: 0}
     movementSpeed: 0
+--- !u!114 &-5904830186133605563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707508955040736789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12d5e164a41870c4d812fcdfce9b93d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
