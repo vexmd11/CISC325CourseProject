@@ -69,6 +69,11 @@ public class mazeController : NetworkBehaviour
             if (experimentalRotation) {
                 rotation.x -= m_Gyro.rotationRateUnbiased.x * Mathf.Rad2Deg * Time.deltaTime;
                 rotation.z -= m_Gyro.rotationRateUnbiased.y * Mathf.Rad2Deg * Time.deltaTime;
+
+                if (Input.anyKeyDown)
+                {
+                    setRotation();
+                }
             } else {
                 rotation.x = m_Gyro.attitude.eulerAngles.x;
                 rotation.z = m_Gyro.attitude.eulerAngles.y;
@@ -91,9 +96,8 @@ public class mazeController : NetworkBehaviour
     }
 
     public void setRotation() {
-        rotation.x = m_Gyro.attitude.eulerAngles.x;
-        rotation.z = m_Gyro.attitude.eulerAngles.y;
-
+        rotation.x = 0;
+        rotation.z = 0;
     }
     
 }
