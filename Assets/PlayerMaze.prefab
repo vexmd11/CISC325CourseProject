@@ -404,7 +404,7 @@ MonoBehaviour:
   gyroAcceleration: 0
   rotate: 1
   gyroOffset: {x: 0, y: 0, z: 0}
-  experimentalRotation: 0
+  experimentalRotation: 1
 --- !u!114 &-3948460616249899516
 MonoBehaviour:
   m_ObjectHideFlags: 0
