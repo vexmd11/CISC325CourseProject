@@ -1410,6 +1410,7 @@ namespace Mirror
         /// <param name="conn">Connection to the server.</param>
         public virtual void OnClientDisconnect(NetworkConnection conn)
         {
+            conn.DestroyOwnedObjects();
             StopClient();
         }
 
