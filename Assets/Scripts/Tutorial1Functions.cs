@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Mirror;
 
 public class Tutorial1Functions : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class Tutorial1Functions : MonoBehaviour
     int index1 = 0;
 
     public GameObject preGamePanel;
+
+    public GameObject networkManager;
 
     public void ScrollTutorial1()
     {
@@ -55,6 +58,7 @@ public class Tutorial1Functions : MonoBehaviour
 
     public void LeaveGame()
     {
+        NetworkManager.singleton.StopClient();
         SceneManager.LoadScene(0);
     }
 }
