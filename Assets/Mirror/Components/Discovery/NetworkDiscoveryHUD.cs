@@ -106,6 +106,7 @@ namespace Mirror.Discovery
 
             discoveredServers.Clear();
             networkDiscovery.StartDiscovery();
+            Debug.Log("joined game");
         }
 
         public void startHost() {

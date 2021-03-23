@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Tutorial1Functions : MonoBehaviour
 {
@@ -50,5 +51,10 @@ public class Tutorial1Functions : MonoBehaviour
         buttonSource.PlayOneShot(menuSelect);
         Time.timeScale = 1f;
         preGamePanel.SetActive(false);
+    }
+
+    public void LeaveGame()
+    {
+        SceneManager.LoadScene(0);
     }
 }

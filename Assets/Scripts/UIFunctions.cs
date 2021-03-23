@@ -23,13 +23,13 @@ public class UIFunctions : MonoBehaviour
     public GameObject mobileMainMenuPanel;
     public GameObject mobileConnectedPanel;
     public GameObject mobileSettingsPanel;
+    public GameObject mobileGameSelectPanel;
     public Slider xSens;
     public Slider ySens;
     public Slider zSens;
 
     //Network reference?
     public GameObject network;
-    
 
     public void Start()
     {
@@ -56,7 +56,7 @@ public class UIFunctions : MonoBehaviour
     public void MobilePressPlay()
     {
         mobileMainMenuPanel.SetActive(false);
-        mobileConnectedPanel.SetActive(true);
+        mobileGameSelectPanel.SetActive(true);
     }
 
     public void MobileLeaveGame()
@@ -88,6 +88,12 @@ public class UIFunctions : MonoBehaviour
         gameSelectPanel.SetActive(false);
         mainMenuPanel.SetActive(true);
         buttonSource.PlayOneShot(menuBack);
+    }
+
+    public void MobileGameSelectBack()
+    {
+        mobileGameSelectPanel.SetActive(false);
+        mobileMainMenuPanel.SetActive(true);
     }
 
     public void MobileSettingsBack()
