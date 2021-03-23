@@ -5138,7 +5138,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1238270551}
         m_TargetAssemblyTypeName: Tutorial1Functions, Assembly-CSharp
-        m_MethodName: LeaveGame
+        m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

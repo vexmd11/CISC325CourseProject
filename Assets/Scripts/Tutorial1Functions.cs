@@ -61,4 +61,9 @@ public class Tutorial1Functions : MonoBehaviour
         //NetworkManager.singleton.StopClient();
         SceneManager.LoadScene(0);
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
