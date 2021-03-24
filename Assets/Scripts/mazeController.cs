@@ -113,10 +113,18 @@ public class mazeController : NetworkBehaviour
     void OnDestroy() {
         if (isLocalPlayer){
             // shutdown client
-            NetworkClient.Disconnect();
-            NetworkClient.Shutdown();
-            SceneManager.LoadScene(0);
+            shutDown(5);
         }
+    }
+
+    IEnumerator shutDown(int time){
+        
+        NetworkClient.Disconnect();
+        NetworkClient.Shutdown();
+
+        yield return new WaitForSeconds(time);
+
+        SceneManager.LoadScene(0);
     }
 
 
