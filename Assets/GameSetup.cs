@@ -54,7 +54,7 @@ public class GameSetup : MonoBehaviour
         
 
         GameObject.FindGameObjectWithTag("NetworkManager").GetComponent<managerSetup>().endServer();
-
+        
         yield return new WaitForSeconds(time);
 
         SceneManager.LoadScene(0);
