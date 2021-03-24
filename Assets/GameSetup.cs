@@ -51,9 +51,12 @@ public class GameSetup : MonoBehaviour
     }
 
     IEnumerator endGame(int time) {
+        
+
+        GameObject.FindGameObjectWithTag("NetworkManager").GetComponent<managerSetup>().endServer();
+
         yield return new WaitForSeconds(time);
 
-        GameObject.FindGameObjectWithTag("NetworkManager").GetComponent<NetworkManager>().StopServer();
         SceneManager.LoadScene(0);
     }
 }

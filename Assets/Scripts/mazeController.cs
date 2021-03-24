@@ -2,6 +2,7 @@ using Mirror;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class mazeController : NetworkBehaviour
 {
@@ -47,8 +48,13 @@ public class mazeController : NetworkBehaviour
                     rotation.x = m_Gyro.attitude.eulerAngles.x;
                     rotation.z = m_Gyro.attitude.eulerAngles.y;
                 }
+                if (!NetworkClient.isConnected) {
+                    SceneManager.LoadScene(0);
+                }
             }
         }
+
+        
 
         handleMovement();
 
@@ -103,5 +109,7 @@ public class mazeController : NetworkBehaviour
         rotation.x = 0;
         rotation.z = 0;
     }
+
+
     
 }

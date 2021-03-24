@@ -18,4 +18,8 @@ public class managerSetup : MonoBehaviour
     {
         
     }
+
+    public void endServer(){
+        manager.StopServer();
+    }
 }
