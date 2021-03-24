@@ -39,6 +39,10 @@ public class mazeController : NetworkBehaviour
                 m_Gyro = Input.gyro;
                 m_Gyro.enabled = true;
                 instantiated = false;
+
+                //telling the game manager that this is a player.
+                GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameSetup>().addPlayer(gameObject);
+
                 if (experimentalRotation){
                     rotation.x = m_Gyro.attitude.eulerAngles.x;
                     rotation.z = m_Gyro.attitude.eulerAngles.y;

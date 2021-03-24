@@ -12,6 +12,8 @@ TagManager:
   - spawner2
   - camera1
   - camera2
+  - GameManager
+  - NetworkManager
   layers:
   - Default
   - TransparentFX

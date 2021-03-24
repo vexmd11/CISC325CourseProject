@@ -12,6 +12,8 @@ public class Tutorial1Functions : MonoBehaviour
     public AudioClip menuSelect;
     public AudioClip menuBack;
 
+    public GameObject manager;
+
     //Tutorial Panels for level 1
     public GameObject[] tutorialPanelsLevel1;
     int index1 = 0;
@@ -54,6 +56,7 @@ public class Tutorial1Functions : MonoBehaviour
         buttonSource.PlayOneShot(menuSelect);
         Time.timeScale = 1f;
         preGamePanel.SetActive(false);
+        
     }
 
     public void LeaveGame()
