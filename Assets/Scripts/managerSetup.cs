@@ -20,6 +20,7 @@ public class managerSetup : MonoBehaviour
     }
 
     public void endServer(){
+        manager.StopClient();
         manager.StopServer();
     }
 }

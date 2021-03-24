@@ -110,14 +110,15 @@ public class mazeController : NetworkBehaviour
         rotation.z = 0;
     }
 
-    private void OnDestroy()
-    {
-        if (isLocalPlayer)
-        {
+    void OnDestroy() {
+        if (isLocalPlayer){
+            // shutdown client
+            NetworkClient.Disconnect();
+            NetworkClient.Shutdown();
             SceneManager.LoadScene(0);
         }
     }
 
 
-
+    
 }
