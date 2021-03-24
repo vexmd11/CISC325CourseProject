@@ -22,6 +22,12 @@ public class Tutorial1Functions : MonoBehaviour
 
     public GameObject networkManager;
 
+    private void Start()
+    {
+        //freeze scene before tutorial begins so that they cant move around maze during tutorial
+        Time.timeScale = 0f;
+    }
+
     public void ScrollTutorial1()
     {
         if (index1 < tutorialPanelsLevel1.Length - 1)
@@ -36,7 +42,6 @@ public class Tutorial1Functions : MonoBehaviour
             tutorialPanelsLevel1[index1].SetActive(false);
             index1 = 0;
             buttonSource.PlayOneShot(menuSelect);
-            Time.timeScale = 0f;
         }
     }
 
