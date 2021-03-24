@@ -25,7 +25,11 @@ public class Tutorial1Functions : MonoBehaviour
     private void Start()
     {
         //freeze scene before tutorial begins so that they cant move around maze during tutorial
-        Time.timeScale = 0f;
+        if(SystemInfo.deviceType == DeviceType.Desktop)
+        {
+            Time.timeScale = 0f;
+            Debug.Log("freezze");
+        }  
     }
 
     public void ScrollTutorial1()
@@ -60,8 +64,8 @@ public class Tutorial1Functions : MonoBehaviour
     {
         buttonSource.PlayOneShot(menuSelect);
         Time.timeScale = 1f;
+        Debug.Log("start");
         preGamePanel.SetActive(false);
-        
     }
 
     public void LeaveGame()
