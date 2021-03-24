@@ -23,4 +23,5 @@ public class managerSetup : MonoBehaviour
         manager.StopClient();
         manager.StopServer();
     }
+
 }
