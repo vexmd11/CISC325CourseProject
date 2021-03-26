@@ -7,7 +7,8 @@ public class controlGameView : MonoBehaviour
     // Start is called before the first frame update
 
     [Tooltip("The number of players that are in the game. Right now, it's only between 1 and 2")]
-    public int numberOfPlayers;
+    public int numberOfPlayers = 1;
+    bool joined = false;
 
     Camera player1, player2;
     void Start()
@@ -31,5 +32,18 @@ public class controlGameView : MonoBehaviour
             player1.rect = new Rect(0,0,1,0.5f);
             player2.rect = new Rect(0,0.5f,1,1);
         }
+    }
+
+    //only increases number of players when the second player joins
+    public void increasePlayers(){
+        if (!joined) {
+            joined = true;
+        } else {
+            numberOfPlayers++;
+        }
+            
+        
+
+        
     }
 }

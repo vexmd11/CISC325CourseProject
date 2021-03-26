@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2924,7 +2924,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.040000003, y: 0.32714045}
   m_AnchorMax: {x: 0.31, y: 0.51078784}
-  m_AnchoredPosition: {x: 0.25650024, y: -53}
+  m_AnchoredPosition: {x: 0.25646973, y: -53}
   m_SizeDelta: {x: 0.5130005, y: 6.324005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &559468529
@@ -6488,7 +6488,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.609258, y: 0.28137055}
   m_AnchorMax: {x: 0.67449474, y: 0.41466907}
-  m_AnchoredPosition: {x: 0.5, y: -1.4799805}
+  m_AnchoredPosition: {x: 0.5, y: -1.4799728}
   m_SizeDelta: {x: -3.243103, y: -3.6296082}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1196666051
@@ -8332,7 +8332,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.74618095}
   m_AnchorMax: {x: 0.09313394, y: 1}
-  m_AnchoredPosition: {x: -7, y: 3.4099426}
+  m_AnchoredPosition: {x: -7, y: 3.4099731}
   m_SizeDelta: {x: 13.287506, y: 4.307602}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1577635411
@@ -8614,7 +8614,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.040000003, y: 0.57455236}
   m_AnchorMax: {x: 0.31, y: 0.767}
-  m_AnchoredPosition: {x: -2.1106873, y: -35.701218}
+  m_AnchoredPosition: {x: -2.1107178, y: -35.701218}
   m_SizeDelta: {x: -0.16100025, y: -4.078499}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1631727002
@@ -9278,7 +9278,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
