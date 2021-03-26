@@ -12,18 +12,22 @@ public class controlGameView : MonoBehaviour
     Camera player1, player2;
     void Start()
     {
-        
+        player1 = GameObject.Find("camera1").GetComponent<Camera>();
+        player1.gameObject.SetActive(false);
+        player2 = GameObject.Find("camera2").GetComponent<Camera>();
+        player2.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
         if (numberOfPlayers == 1){
-            player1 = GameObject.Find("camera1").GetComponent<Camera>();
-            player1.rect = new Rect(0,0,1,1);
+            player1.gameObject.SetActive(true);
+            player2.gameObject.SetActive(false);
+            player1.rect = new Rect(0,0,1,1); 
         } else if (numberOfPlayers == 2) {
-            player1 = GameObject.Find("camera1").GetComponent<Camera>();
-            player2 = GameObject.Find("camera2").GetComponent<Camera>();
+            player1.gameObject.SetActive(true);
+            player2.gameObject.SetActive(true);
             player1.rect = new Rect(0,0,1,0.5f);
             player2.rect = new Rect(0,0.5f,1,1);
         }

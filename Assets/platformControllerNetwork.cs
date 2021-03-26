@@ -13,8 +13,6 @@ public class platformControllerNetwork : NetworkBehaviour
     public Vector3 gyroOffset; 
     Vector3 rotation;
 
-    GameObject player;
-
     public bool initialized = true;
 
     void Start()
@@ -25,6 +23,7 @@ public class platformControllerNetwork : NetworkBehaviour
         Screen.orientation = ScreenOrientation.Portrait;
         rotation.x = 0;//m_Gyro.attitude.eulerAngles.x;
         rotation.z = 0;//m_Gyro.attitude.eulerAngles.y;
+        GameObject.Find("gameManager").GetComponent<controlGameView>().numberOfPlayers++;
     }
 
     // Update is called once per frame
@@ -40,7 +39,6 @@ public class platformControllerNetwork : NetworkBehaviour
                 rotation.z = 0;//m_Gyro.attitude.eulerAngles.y;
                 initialized = false;
                 GameObject.Find("gameManager").GetComponent<controlGameView>().numberOfPlayers++;
-                player = transform.Find("player").gameObject;
 
             }
 
@@ -76,7 +74,7 @@ public class platformControllerNetwork : NetworkBehaviour
             }
             
             //transform.eulerAngles = rotation + gyroOffset;
-            player.transform.rotation = Quaternion.Euler(rotation);
+            transform.rotation = Quaternion.Euler(rotation);
 
 
             //Debug.Log(m_Gyro.attitude.eulerAngles.x + ",  " + m_Gyro.attitude.eulerAngles.y + ",  " + m_Gyro.attitude.eulerAngles.z);
@@ -105,9 +103,6 @@ public class platformControllerNetwork : NetworkBehaviour
 
     }
 
-    void OnDestroy(){
-        GameObject.Find("gameManager").GetComponent<controlGameView>().numberOfPlayers--;
-    }    
 }
 
     
