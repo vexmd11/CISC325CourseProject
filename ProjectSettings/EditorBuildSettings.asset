@@ -11,10 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MiniGame1.unity
     guid: a79e9f42556c6db41b6c51178e32cb8a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/BlockHittingGame.unity
     guid: 19622cfb2493fc44c88d385b2b4b0b55
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/BinGame 1.unity
     guid: 7eddc205e936bc642a0ee54c5b385519
+  - enabled: 1
+    path: Assets/Scenes/BinGame 2.unity
+    guid: 336b13c3673e19e4c9226787fb4fccff
   m_configObjects: {}
