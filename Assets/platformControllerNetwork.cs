@@ -7,12 +7,13 @@ public class platformControllerNetwork : NetworkBehaviour
 {
     Gyroscope m_Gyro;
     public float speed = 10.0f;
-
     public bool move;
     public bool gyroAcceleration;
     public bool rotate;
     public Vector3 gyroOffset; 
     Vector3 rotation;
+
+    GameObject player;
 
     public bool initialized = true;
 
@@ -39,6 +40,8 @@ public class platformControllerNetwork : NetworkBehaviour
                 rotation.z = 0;//m_Gyro.attitude.eulerAngles.y;
                 initialized = false;
                 GameObject.Find("gameManager").GetComponent<controlGameView>().numberOfPlayers++;
+                player = transform.Find("player").gameObject;
+
             }
 
             Vector3 dir = Vector3.zero;
@@ -73,7 +76,7 @@ public class platformControllerNetwork : NetworkBehaviour
             }
             
             //transform.eulerAngles = rotation + gyroOffset;
-            transform.rotation = Quaternion.Euler(rotation);
+            player.transform.rotation = Quaternion.Euler(rotation);
 
 
             //Debug.Log(m_Gyro.attitude.eulerAngles.x + ",  " + m_Gyro.attitude.eulerAngles.y + ",  " + m_Gyro.attitude.eulerAngles.z);
@@ -101,6 +104,10 @@ public class platformControllerNetwork : NetworkBehaviour
         rotation.z = 0;//m_Gyro.attitude.eulerAngles.y;
 
     }
+
+    void OnDestroy(){
+        GameObject.Find("gameManager").GetComponent<controlGameView>().numberOfPlayers--;
+    }    
 }
 
     
