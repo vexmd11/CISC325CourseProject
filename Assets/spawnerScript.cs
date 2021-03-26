@@ -57,4 +57,8 @@ public class spawnerScript : MonoBehaviour
         spawn = true; //allow next ball to spawn
 
     }
+
+    public void startGame() {
+        start = true;
+    }
 }
