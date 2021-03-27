@@ -15,6 +15,7 @@ public class managerSetup : MonoBehaviour
         manager = GameObject.FindGameObjectWithTag("NetworkManager").GetComponent<NetworkManager>();
         manager.networkAddress = NetworkManager.singleton.networkAddress;
         manager.GetComponent<NetworkManager>().spawnPrefabs[0] = currentScenePrefab;
+        manager.playerPrefab = currentScenePrefab;
         Debug.Log(NetworkManager.singleton.networkAddress);
     }
 
