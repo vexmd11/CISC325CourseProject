@@ -2397,6 +2397,8 @@ MonoBehaviour:
   disconnectInactiveTimeout: 60
   authenticator: {fileID: 0}
   playerPrefab: {fileID: 707508955040736789, guid: 8abb9000fe06a5b4292a9bae4e7ce202, type: 3}
+  scene1Player: {fileID: 707508955040736789, guid: 8abb9000fe06a5b4292a9bae4e7ce202, type: 3}
+  scene2Player: {fileID: 5399299367360271525, guid: dd760c7d7f28b8744aa02a35ead2611d, type: 3}
   autoCreatePlayer: 1
   playerSpawnMethod: 1
   spawnPrefabs:
@@ -6662,7 +6664,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.13766667, y: 0.67559266}
   m_AnchorMax: {x: 0.55521923, y: 0.966}
-  m_AnchoredPosition: {x: -2.5000763, y: -0.5}
+  m_AnchoredPosition: {x: -2.5000916, y: -0.5}
   m_SizeDelta: {x: -7.9850006, y: -1.7368927}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1976921280

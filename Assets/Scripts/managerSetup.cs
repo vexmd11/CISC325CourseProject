@@ -6,8 +6,12 @@ public class managerSetup : MonoBehaviour
 {
     public NetworkManager manager;
     public GameObject currentScenePrefab;
+
     // Start is called before the first frame update
 
+    void Awake(){
+
+    }
 
     void Start()
     {

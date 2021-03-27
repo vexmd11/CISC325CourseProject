@@ -154,6 +154,8 @@ namespace Mirror
         [FormerlySerializedAs("m_PlayerPrefab")]
         [Tooltip("Prefab of the player object. Prefab must have a Network Identity component. May be an empty game object or a full avatar.")]
         public GameObject playerPrefab;
+        public GameObject scene1Player;
+        public GameObject scene2Player;
 
         /// <summary>
         /// A flag to control whether or not player objects are automatically created on connect, and on scene change.
@@ -274,10 +276,13 @@ namespace Mirror
             //
             // (tick rate is applied in StartServer!)
 #if UNITY_SERVER
+
             if (autoStartServerBuild)
             {
                 StartServer();
             }
+
+
 #endif
         }
 
@@ -362,6 +367,13 @@ namespace Mirror
         /// </summary>
         public void StartServer()
         {
+
+            if (SceneManager.GetActiveScene().buildIndex==1){
+                playerPrefab = scene1Player;
+            } else if (SceneManager.GetActiveScene().buildIndex==2) {
+                playerPrefab = scene2Player;
+            }
+
             if (NetworkServer.active)
             {
                 logger.LogWarning("Server already started.");

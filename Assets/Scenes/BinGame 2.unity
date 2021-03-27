@@ -2517,7 +2517,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.75600004}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -30.000061, y: -361.38}
+  m_AnchoredPosition: {x: -30.00003, y: -361.38}
   m_SizeDelta: {x: -545.4164, y: -146.9295}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &706194148
@@ -4506,7 +4506,7 @@ GameObject:
   - component: {fileID: 1285325690}
   m_Layer: 0
   m_Name: NetworkManager
-  m_TagString: NetworkManager
+  m_TagString: NetworkManager2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4636,6 +4636,8 @@ MonoBehaviour:
   disconnectInactiveTimeout: 60
   authenticator: {fileID: 0}
   playerPrefab: {fileID: 5399299367360271525, guid: dd760c7d7f28b8744aa02a35ead2611d, type: 3}
+  scene1Player: {fileID: 707508955040736789, guid: 8abb9000fe06a5b4292a9bae4e7ce202, type: 3}
+  scene2Player: {fileID: 5399299367360271525, guid: dd760c7d7f28b8744aa02a35ead2611d, type: 3}
   autoCreatePlayer: 1
   playerSpawnMethod: 1
   spawnPrefabs:
