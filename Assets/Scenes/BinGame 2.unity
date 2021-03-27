@@ -2438,9 +2438,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1285325687}
-        m_TargetAssemblyTypeName: Mirror.Discovery.NetworkDiscoveryHUD, Mirror.Components
-        m_MethodName: lookForServers
+      - m_Target: {fileID: 1285325692}
+        m_TargetAssemblyTypeName: Mirror.NetworkManager, Mirror
+        m_MethodName: StopClient
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
