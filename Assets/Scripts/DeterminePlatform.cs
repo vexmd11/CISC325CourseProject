@@ -19,6 +19,7 @@ public class DeterminePlatform : MonoBehaviour
             Debug.Log("handheld");
             connectedPanel.SetActive(true);
             tutorialPanel1.SetActive(false);
+            StartCoroutine(hold());
             joinGameButton.onClick.Invoke();
         }
         else
@@ -29,9 +30,9 @@ public class DeterminePlatform : MonoBehaviour
             startGameButton.onClick.Invoke();
         }
     }
+    IEnumerator hold(){
 
-    IEnumerator wait(){
+        yield return new WaitForSeconds(0.5f);
 
-        yield return new waitForSeconds(1);
     }
 }
