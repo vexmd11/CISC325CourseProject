@@ -29,4 +29,9 @@ public class DeterminePlatform : MonoBehaviour
             startGameButton.onClick.Invoke();
         }
     }
+
+    IEnumerator wait(){
+
+        yield return new waitForSeconds(1);
+    }
 }

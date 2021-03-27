@@ -6,6 +6,8 @@ public class managerSetup : MonoBehaviour
 {
     public NetworkManager manager;
     // Start is called before the first frame update
+
+
     void Start()
     {
         manager = this.GetComponent<NetworkManager>();
