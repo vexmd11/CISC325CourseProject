@@ -19,7 +19,6 @@ public class DeterminePlatform : MonoBehaviour
             Debug.Log("handheld");
             connectedPanel.SetActive(true);
             tutorialPanel1.SetActive(false);
-            StartCoroutine(hold());
             joinGameButton.onClick.Invoke();
         }
         else
