@@ -2474,6 +2474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 647363324}
+  currentScenePrefab: {fileID: 707508955040736789, guid: 8abb9000fe06a5b4292a9bae4e7ce202, type: 3}
 --- !u!1 &653260035
 GameObject:
   m_ObjectHideFlags: 0
