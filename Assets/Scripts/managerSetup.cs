@@ -23,12 +23,6 @@ public class managerSetup : MonoBehaviour
         Debug.Log(NetworkManager.singleton.networkAddress);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void endServer(){
         manager.StopClient();
         manager.StopServer();

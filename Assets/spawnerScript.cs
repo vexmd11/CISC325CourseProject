@@ -35,6 +35,11 @@ public class spawnerScript : MonoBehaviour
         //Debug.Log("SCORE IS:" + score);
         scoreDisplay.text = "SCORE: " + score;
 
+        if (score >= 25){
+            GameObject.FindGameObjectWithTag("GameManager").GetComponent<controlGameView>().weWon();
+            Debug.Log("we won");
+        }
+
     }
 
     IEnumerator spawnBalls(){

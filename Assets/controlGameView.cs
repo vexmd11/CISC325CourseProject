@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class controlGameView : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -30,5 +30,21 @@ public class controlGameView : MonoBehaviour
         
 
         
+    }
+
+    public void weWon() {
+        Debug.Log("end game");
+        StartCoroutine(endGame(5));
+        
+        
+    }
+
+    IEnumerator endGame(int time) {
+        
+        GameObject.FindGameObjectWithTag("NetworkManager").GetComponent<managerSetup>().endServer();
+        
+        yield return new WaitForSeconds(time);
+
+        SceneManager.LoadScene(0);
     }
 }
