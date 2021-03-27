@@ -23,7 +23,7 @@ public class platformControllerNetwork : NetworkBehaviour
         Screen.orientation = ScreenOrientation.Portrait;
         rotation.x = 0;//m_Gyro.attitude.eulerAngles.x;
         rotation.z = 0;//m_Gyro.attitude.eulerAngles.y;
-        GameObject.Find("gameManager").GetComponent<controlGameView>().increasePlayers();
+        transform.position = GameObject.Find("gameManager").GetComponent<controlGameView>().increasePlayers().position;
     }
 
     // Update is called once per frame
@@ -38,7 +38,7 @@ public class platformControllerNetwork : NetworkBehaviour
                 rotation.x = 0;//m_Gyro.attitude.eulerAngles.x;
                 rotation.z = 0;//m_Gyro.attitude.eulerAngles.y;
                 initialized = false;
-                GameObject.Find("gameManager").GetComponent<controlGameView>().numberOfPlayers++;
+                transform.position = GameObject.Find("gameManager").GetComponent<controlGameView>().increasePlayers().position;
 
             }
 

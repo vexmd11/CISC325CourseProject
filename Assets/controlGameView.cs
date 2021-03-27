@@ -11,6 +11,9 @@ public class controlGameView : MonoBehaviour
     bool joined = false;
 
     Camera player1, player2;
+
+    public Transform spawn1, spawn2;
+    
     void Start()
     {
         player1 = GameObject.Find("camera1").GetComponent<Camera>();
@@ -35,11 +38,13 @@ public class controlGameView : MonoBehaviour
     }
 
     //only increases number of players when the second player joins
-    public void increasePlayers(){
+    public Transform increasePlayers(){
         if (!joined) {
             joined = true;
+            return spawn1;
         } else {
             numberOfPlayers++;
+            return spawn2;
         }
             
         
