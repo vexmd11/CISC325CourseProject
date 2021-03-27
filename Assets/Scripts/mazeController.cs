@@ -115,8 +115,13 @@ public class mazeController : NetworkBehaviour
             // shutdown client
             NetworkClient.Disconnect();
             NetworkClient.Shutdown();
+            StartCoroutine(stop(5));
             SceneManager.LoadScene(0);
         }
+    }
+
+    IEnumerator stop(int seconds) {
+        yield return new WaitForSeconds(seconds);
     }
     
     

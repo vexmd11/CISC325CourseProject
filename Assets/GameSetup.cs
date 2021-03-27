@@ -45,6 +45,7 @@ public class GameSetup : MonoBehaviour
             text = "PLAYER 2 WINS!";
         }
         gameEnded = true;
+
         StartCoroutine(endGame(5));
         }
         
