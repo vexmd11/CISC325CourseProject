@@ -795,7 +795,16 @@ namespace Mirror
                 ClientScene.RegisterPrefab(playerPrefab);
 
             foreach (GameObject prefab in spawnPrefabs.Where(t => t != null))
-                ClientScene.RegisterPrefab(prefab);
+            {
+                if(SceneManager.GetActiveScene().buildIndex == 1 && prefab.tag == "Maze")
+                {
+                    ClientScene.RegisterPrefab(prefab);
+                }else if (SceneManager.GetActiveScene().buildIndex == 2 && prefab.tag == "Platform")
+                {
+                    ClientScene.RegisterPrefab(prefab);
+                }
+            }
+                
         }
 
         /// <summary>
