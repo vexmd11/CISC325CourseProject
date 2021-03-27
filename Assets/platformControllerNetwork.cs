@@ -13,7 +13,7 @@ public class platformControllerNetwork : NetworkBehaviour
     public Vector3 gyroOffset; 
     Vector3 rotation;
 
-    public bool initialized = true;
+    bool initialized = true;
 
     void Start()
     {

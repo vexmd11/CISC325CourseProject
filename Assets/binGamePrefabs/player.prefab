@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 5399299367360271527}
   - component: {fileID: 5399299367360271520}
   - component: {fileID: 5399299367360271524}
-  - component: {fileID: 5399299367360271523}
   - component: {fileID: 5399299367360271548}
   - component: {fileID: 5399299367360271549}
   - component: {fileID: 5399299367360271522}
@@ -117,23 +116,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 3
---- !u!114 &5399299367360271523
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5399299367360271525}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d298d066f9862694eb968cbc14402e96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
-  move: 0
-  gyroAcceleration: 0
-  rotate: 1
-  gyroOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &5399299367360271548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,9 +149,8 @@ MonoBehaviour:
   speed: 10
   move: 0
   gyroAcceleration: 0
-  rotate: 0
+  rotate: 1
   gyroOffset: {x: 0, y: 0, z: 0}
-  initialized: 1
 --- !u!114 &5399299367360271522
 MonoBehaviour:
   m_ObjectHideFlags: 0
