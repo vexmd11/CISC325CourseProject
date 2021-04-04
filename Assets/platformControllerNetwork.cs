@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
+using UnityEngine.SceneManagement;
 
 public class platformControllerNetwork : NetworkBehaviour
 {
@@ -102,6 +103,15 @@ public class platformControllerNetwork : NetworkBehaviour
         rotation.x = 0;//m_Gyro.attitude.eulerAngles.x;
         rotation.z = 0;//m_Gyro.attitude.eulerAngles.y;
 
+    }
+
+    void OnDestroy() {
+        if (isLocalPlayer){
+            // shutdown client
+            NetworkClient.Disconnect();
+            NetworkClient.Shutdown();
+            SceneManager.LoadScene(0);
+        }
     }
 
 }

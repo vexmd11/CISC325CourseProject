@@ -15,7 +15,19 @@ public class endBinGame : MonoBehaviour
     void Update()
     {
         if (spawner.score >=25){
-            SceneManager.LoadScene(0);
+
+
+            StartCoroutine(endGame(3));
         }
+    }
+
+    IEnumerator endGame(int time) {
+        
+
+        GameObject.FindGameObjectWithTag("NetworkManager").GetComponent<managerSetup>().endServer();
+        
+        yield return new WaitForSeconds(time);
+
+        SceneManager.LoadScene(0);
     }
 }
