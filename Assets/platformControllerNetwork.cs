@@ -114,6 +114,15 @@ public class platformControllerNetwork : NetworkBehaviour
         }
     }
 
+    public void goBack() {
+        if (isLocalPlayer){
+            // shutdown client
+            NetworkClient.Disconnect();
+            NetworkClient.Shutdown();
+            SceneManager.LoadScene(0);
+        }
+    }
+
 }
 
     
