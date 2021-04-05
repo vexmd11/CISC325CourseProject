@@ -238,10 +238,10 @@ GameObject:
   - component: {fileID: 365066949446444061}
   - component: {fileID: 365066949446444059}
   - component: {fileID: -3948460616249899516}
-  - component: {fileID: -6655431959078438512}
+  - component: {fileID: 7257330951240964382}
   m_Layer: 0
   m_Name: PlayerMaze
-  m_TagString: Untagged
+  m_TagString: Maze
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -446,7 +446,7 @@ MonoBehaviour:
     localRotation: {x: 0, y: 0, z: 0, w: 0}
     localScale: {x: 0, y: 0, z: 0}
     movementSpeed: 0
---- !u!114 &-6655431959078438512
+--- !u!114 &7257330951240964382
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -455,6 +455,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 707508955040736789}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12d5e164a41870c4d812fcdfce9b93d3, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneId: 0
+  serverOnly: 0
+  m_AssetId: 
+  hasSpawned: 0
